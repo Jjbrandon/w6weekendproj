@@ -7,7 +7,8 @@ from flask_login import LoginManager
 
 from .models import User, db
 
-###### bringing in routes for registration #######
+###### bring in routes for registration here #######
+from .post.routes import post
 
 
 
@@ -16,15 +17,13 @@ app = Flask(__name__)
 app.config.from_object(Config)
 migrate = Migrate(app,db)
 
-from app import routes, models
+from app import routes, models, post
 
-from .models import db
+from .models import User, db
 
+#### REGISTER BLUEPRINTS HERE
 
+app.register_blueprint(post)
 
+## initialize db
 db.init_app(app)
-
-
-
-
-
