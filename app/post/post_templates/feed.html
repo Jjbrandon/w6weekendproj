@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-8">
       <div class="card" style="width: 47vw; margin-top: 7vh;">
-          <h5 class="card-title">{{ post.id }}</h5>
+          <h5 class="card-title">{{ post.user_id_username }}</h5>
           <img class="card-img-top" src="{{ post.image }}" alt="Card image cap">
           <div style="gap: 2vw;" class="card-body">
             <p class="card-text">{{ post.content }}</p>
@@ -35,7 +35,7 @@
     </div>
     {% endfor %}
     
-    <div style="margin-top: 7vh;" class="col">
+    <div style="margin-top: 7vh;" class="col sticky-top">
       
       <div class="sidewrapper">
           <!-- Sidebar  -->
@@ -47,7 +47,7 @@
               <ul class="list-unstyled components">
                   <p>Profile Navigation</p>
                   <li>
-                      <a href="#">Your Profile</a>
+                      <a href="{{ url_for('post.profile') }}">Your Profile</a>
                   </li>
                   <li>
                       
